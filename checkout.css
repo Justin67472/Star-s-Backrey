@@ -1,0 +1,275 @@
+/* ------------------ */
+/* HEADER + NAVIGATION */
+/* ------------------ */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 25px;
+  z-index: 100;
+  animation: headerColorChange 10s infinite alternate ease-in-out;
+}
+
+header .logo img {
+  height: 50px;
+}
+
+.main-nav ul {
+  display: flex;
+  list-style: none;
+  gap: 22px;
+  margin: 0;
+  padding: 0;
+}
+
+.main-nav li {
+  display: inline-block;
+}
+
+.main-nav a {
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  color: black;
+  transition: color 0.3s ease;
+}
+
+.main-nav a:hover {
+  text-decoration: underline;
+  color: black;
+}
+
+/* Cart + Profile icons */
+.header-icons {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 22px;
+}
+
+.header-icons .cart {
+  font-size: 22px;
+  text-decoration: none;
+  color: black;
+  position: relative;
+}
+
+.header-icons .cart span {
+  font-size: 14px;
+  background: #e6007e;
+  color: #fff;
+  border-radius: 50%;
+  padding: 2px 6px;
+  position: absolute;
+  top: -8px;
+  right: -12px;
+}
+
+.header-icons #profileIcon {
+  font-size: 22px;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.2s ease;
+  color: gray;
+}
+
+/* ------------------ */
+/* CHECKOUT PAGE BODY */
+/* ------------------ */
+.checkout-page {
+  margin-top: 100px;
+  width: 90%;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+  padding: 20px;
+}
+
+.checkout-page h1 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  text-align: center;
+  color: #000;
+}
+
+.checkout-page h2 {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #333;
+}
+
+.checkout-page section {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 20px;
+  margin-bottom: 25px;
+}
+
+/* Dropdowns */
+.checkout-page select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  margin-top: 8px;
+}
+
+/* ------------------ */
+/* REVIEW ITEMS       */
+/* ------------------ */
+.checkout-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.checkout-item-img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.checkout-item-info h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.checkout-item-info p {
+  margin: 4px 0;
+  font-size: 15px;
+}
+
+/* Continue Shopping button */
+.continue-btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 18px;
+  background: #ff6f61;
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.continue-btn:hover {
+  background: #e85c50;
+}
+
+/* ------------------ */
+/* SUMMARY + BUTTON   */
+/* ------------------ */
+.summary p {
+  font-size: 16px;
+  margin: 8px 0;
+}
+
+.summary label {
+  display: block;
+  margin-top: 12px;
+  font-size: 15px;
+}
+
+.pay-btn {
+  display: inline-block;
+  margin-top: 18px;
+  padding: 12px 20px;
+  background: #e6007e;
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.pay-btn:hover {
+  background: #bf0067;
+}
+
+/* ------------------ */
+/* RESPONSIVE LAYOUT  */
+/* ------------------ */
+@media (min-width: 900px) {
+  .checkout-page {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+  }
+
+  .checkout-page .review,
+  .checkout-page .delivery,
+  .checkout-page .payment {
+    grid-column: 1;
+  }
+
+  .checkout-page .summary {
+    grid-column: 2;
+    align-self: start;
+  }
+}
+/* ------------------ */
+/* QUANTITY CONTROLS  */
+/* ------------------ */
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.quantity-controls button {
+  background: #ff6f61;
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  padding: 4px 10px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+
+.quantity-controls button:hover {
+  background: #e85c50;
+}
+
+.quantity-controls span {
+  font-size: 15px;
+  font-weight: 600;
+  min-width: 20px;
+  text-align: center;
+}
+
+/* ------------------ */
+/* REMOVE BUTTON      */
+/* ------------------ */
+.remove-btn {
+  background-color: crimson;
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  cursor: pointer;
+  margin-top: 8px;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.remove-btn:hover {
+  background-color: darkred;
+}

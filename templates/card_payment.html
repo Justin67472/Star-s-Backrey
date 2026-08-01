@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Card Payment - Star's Bakery</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f9f9f9; }
+    .payment-container {
+      width: 420px; margin: 80px auto; padding: 25px;
+      background: #fff; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    h2 { margin-bottom: 20px; color: #333; }
+    input { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 4px; }
+    button {
+      width: 100%; padding: 12px; margin: 10px 0;
+      background: #007bff; color: #fff; border: none; cursor: pointer;
+      font-size: 16px; border-radius: 4px; font-weight: bold;
+    }
+    button:hover { background: #0056b3; }
+    .back-btn { background: #ccc; color: #333; }
+    .back-btn:hover { background: #aaa; }
+  </style>
+</head>
+<body>
+  <div class="payment-container">
+    <h2>Card Payment</h2>
+
+    <form id="cardForm">
+      <input type="text" id="cardName" placeholder="Cardholder Name" required>
+      <input type="text" id="cardNumber" placeholder="Card Number" required>
+      <input type="text" id="expiry" placeholder="MM/YY" required>
+      <input type="text" id="cvv" placeholder="CVV" required>
+      <input type="text" id="amount" placeholder="Amount (GHS)" readonly>
+      <button type="submit">Pay Now</button>
+    </form>
+
+    <button class="back-btn" onclick="window.location.href='checkout.html'">Back to Checkout</button>
+  </div>
+
+  <script>
+    const total = localStorage.getItem("checkoutTotal") || "0.00";
+    document.getElementById("amount").value = total;
+
+    document.getElementById("cardForm").addEventListener("submit", async function(e) {
+      e.preventDefault();
+      const cardName = document.getElementById("cardName").value;
+      const cardNumber = document.getElementById("cardNumber").value;
+      const expiry = document.getElementById("expiry").value;
+      const cvv = document.getElementById("cvv").value;
+      const order = JSON.parse(localStorage.getItem("currentOrder"));
+
+      if(cardName && cardNumber && expiry && cvv && order) {
+        order.phone = "Card ending " + cardNumber.slice(-4);
+
+        await fetch("https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(order)
+        });
+
+        alert("Payment of GHS " + total + " processed successfully with card ending " + cardNumber.slice(-4) + ".");
+        localStorage.removeItem("checkoutTotal");
+        localStorage.removeItem("currentOrder");
+        window.location.href = "success.html";
+      } else {
+        alert("Please fill in all card details.");
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ page_title }} - Star's Bakery</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <a href="{{ url_for('user.home') }}"><img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="Logo" /></a>
+  </div>
+
+  <nav class="main-nav">
+    <ul>
+      <li><a href="{{ url_for('user.category_page', category='muffins', page=1) }}" class="{% if category == 'muffins' %}active{% endif %}">Muffins</a></li>
+      <li><a href="{{ url_for('user.category_page', category='doughnuts', page=1) }}" class="{% if category == 'doughnuts' %}active{% endif %}">Doughnuts</a></li>
+      <li><a href="{{ url_for('user.category_page', category='pancakes', page=1) }}" class="{% if category == 'pancakes' %}active{% endif %}">Pancakes</a></li>
+      <li><a href="{{ url_for('user.category_page', category='cinnamonrolls', page=1) }}" class="{% if category == 'cinnamonrolls' %}active{% endif %}">Cinnamon Rolls</a></li>
+      <li><a href="{{ url_for('user.category_page', category='cookies', page=1) }}" class="{% if category == 'cookies' %}active{% endif %}">Cookies</a></li>
+      <li><a href="{{ url_for('user.category_page', category='tincakes', page=1) }}" class="{% if category == 'tincakes' %}active{% endif %}">Tin Cakes</a></li>
+      <li><a href="{{ url_for('user.category_page', category='fruitjuices', page=1) }}" class="{% if category == 'fruitjuices' %}active{% endif %}">Fruit Juices</a></li>
+      <li><a href="{{ url_for('user.packages') }}">Packages</a></li>
+      <li><a href="{{ url_for('user.about') }}">About Me</a></li>
+    </ul>
+  </nav>
+
+  <div class="header-icons">
+    <a href="{{ url_for('user.cart') }}" class="cart-icon">🛒</a>
+    <span id="profileIcon">👤</span>
+  </div>
+</header>
+
+<section class="page-title">
+  <h1 id="categoryTitle">{{ page_title }}</h1>
+  <p id="categorySubtitle">{{ page_subtitle }}</p>
+</section>
+
+<section class="product-grid">
+  {% for product in products %}
+  <div class="product-card">
+    <img src="{{ url_for('static', filename=product.image) }}" alt="{{ product.alt }}">
+    <h3>{{ product.name }}</h3>
+    <p class="price">{{ product.price }}</p>
+    <button class="add-cart-btn"
+      onclick="addToCart('{{ product.name }}', '{{ product.price }}', '{{ url_for('static', filename=product.image) }}')">
+      Add to Cart
+    </button>
+  </div>
+  {% endfor %}
+</section>
+
+<section class="pagination">
+  <div class="pagination-buttons">
+    {% if prev_page %}
+    <a class="pagination-btn back-btn" href="{{ url_for('user.category_page', category=category, page=prev_page) }}">
+      ← Back
+    </a>
+    {% endif %}
+
+    <span class="page-number">Page {{ page_number }} of {{ page_count }}</span>
+
+    {% if next_page %}
+    <a class="pagination-btn next-btn" href="{{ url_for('user.category_page', category=category, page=next_page) }}">
+      Next →
+    </a>
+    {% endif %}
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Star's Bakery. All Rights Reserved.</p>
+</footer>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+<script>
+  const title = document.getElementById("categoryTitle");
+  const subtitle = document.getElementById("categorySubtitle");
+  const titleWords = ["Baked Perfection", "Artisan Treats", "Fresh from the Oven", "Sweet Moments"];
+  const subtitleWords = ["Crafted with love.", "Made for every craving.", "Fresh • Moist • Irresistible.", "Come taste the magic."];
+  let index = 0;
+  function changeTitle() {
+    index = (index + 1) % titleWords.length;
+    title.textContent = titleWords[index];
+    subtitle.textContent = subtitleWords[index];
+  }
+  setInterval(changeTitle, 2500);
+</script>
+</body>
+</html>

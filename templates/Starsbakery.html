@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Star's Bakery</title>
+<link rel="stylesheet" href="style.css">
+
+<!-- Google Sign-In API -->
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="logo">
+    <img src="images/logo.jpg" alt="Star's Bakery Logo">
+  </div>
+
+  <nav class="main-nav">
+    <ul>
+      <li><a href="muffins.html">Muffins</a></li>
+      <li><a href="doughnuts.html">Doughnuts</a></li>
+      <li><a href="pancakes.html">Pancakes</a></li>
+      <li><a href="cinnamonroll.html">Cinnammon Rolls</a></li>
+      <li><a href="cookies.html">Cookies</a></li>
+      <li><a href="tincakes.html">Tin Cakes</a></li>
+      <li><a href="fruitjuices.html">Fruit Juices</a></li>
+      <li><a href="packages.html">Packages</a></li>
+      <li><a href="aboutme.html">About Me</a></li>
+    </ul>
+  </nav>
+
+  <div class="header-icons">
+    <a href="cart.html" class="cart">🛒</a>
+    <span id="profileIcon">👤</span>
+  </div>
+
+</header>
+
+<!-- GOOGLE SIGN-IN BUTTON -->
+<div id="g_id_onload"
+     data-client_id="YOUR_GOOGLE_CLIENT_ID"
+     data-login_uri=""
+     data-auto_prompt="false">
+</div>
+
+<div class="g_id_signin" data-type="icon" data-size="large"></div>
+
+<!-- WELCOME -->
+<section class="welcome">
+  <h1 id="welcomeText">Welcome to Star's Bakery</h1>
+</section>
+
+<!-- PRODUCT CAROUSEL -->
+<section class="product-slideshow">
+  <div class="slide" onclick="location.href='muffins.html'">
+    <img src="images/vanilla.jpg" alt="Vanilla Choco Chip">
+    <p class="product-name">Vanilla muffins (Small, With chocolate chips)</p>
+    <p class="product-price">₵5</p>
+  </div>
+  <div class="slide" onclick="location.href='doughnuts.html'">
+    <img src="images/chocodelight.jpg" alt="Choco Delight">
+    <p class="product-name">Choco Delight (Large, With Nutella Filling)</p>
+    <p class="product-price">₵20</p>
+  </div>
+  <div class="slide" onclick="location.href='pancakes.html'">
+    <img src="images/chocdelight.jpg" alt="Choco Delight">
+    <p class="product-name">Chocdelight (With Chocolate Sauce)</p>
+    <p class="product-price">₵10</p>
+  </div>
+  <div class="slide" onclick="location.href='cinnamonroll.html'">
+    <img src="images/redvelvetswirl.png" alt="Red Velvet Swirl">
+    <p class="product-name">Red Velvet Swirl</p>
+    <p class="product-price">₵15</p>
+  </div>
+  <div class="slide" onclick="location.href='cookies.html'">
+    <img src="images/vanillachoco.jpg" alt="VaniChoco">
+    <p class="product-name">Vanilla and Chocolate Chip Crunch (Large)</p>
+    <p class="product-price">₵20</p>
+  </div>
+  <div class="slide" onclick="location.href='tincakes.html'">
+    <img src="images/tresleches.png" alt="Tres Leches">
+    <p class="product-name">Vanilla Funfetti Tres Leches</p>
+    <p class="product-price">₵15</p>
+  </div>
+  <div class="slide" onclick="location.href='fruitjuices.html'">
+    <img src="images/pineginga.jpg" alt="PineGinga">
+    <p class="product-name">PineGinga (Small, 500ml)</p>
+    <p class="product-price">₵20</p>
+  </div>
+ <div class="slide" onclick="location.href='packages.html'">
+    <img src="images/packagess.png" alt="Packages">
+    <p class="product-name">Packages</p>
+  </div> 
+ <div class="slide" onclick="location.href='aboutme.html'">
+    <img src="images/logo.jpg" alt="About Me">
+    <p class="product-name">About Me</p>
+  </div>
+  </section>
+
+<!-- SCRIPT -->
+<script src="script.js"></script>
+
+
+
+
+<!-- FOOTER -->
+<footer>
+  <p>&copy; 2026 Star's Bakery. All Rights Reserved.</p>
+</footer>
+</body>
+</html>

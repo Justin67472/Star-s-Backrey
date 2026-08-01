@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Order Success - Star's Bakery</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f9f9f9; }
+    .success-container {
+      width: 500px; margin: 100px auto; padding: 30px;
+      background: #fff; border-radius: 10px; box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    h2 { color: #4CAF50; margin-bottom: 20px; }
+    p { font-size: 16px; margin: 12px 0; color: #333; }
+    button {
+      padding: 12px 20px; margin-top: 20px;
+      background: #ff4081; color: #fff; border: none; cursor: pointer;
+      font-size: 16px; border-radius: 6px; font-weight: bold;
+    }
+    button:hover { background: #e73370; }
+  </style>
+</head>
+<body>
+  <div class="success-container">
+    <h2>🎉 Order Confirmed!</h2>
+    <p>Thank you for shopping with Star's Bakery.</p>
+    <p>Your payment has been processed successfully.</p>
+    <p>We’ll deliver your order soon. Please check your email for confirmation.</p>
+
+    <button onclick="window.location.href='starsbakery.html'">Back to Home</button>
+  </div>
+
+  <script>
+    // Clear checkout data after success
+    localStorage.removeItem("checkoutTotal");
+    localStorage.removeItem("cart");
+  </script>
+</body>
+</html>

@@ -1,0 +1,187 @@
+/* ABOUT PAGE STYLES */
+
+/* Container */
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  max-width: 1000px;
+  margin: 140px auto 60px auto; /* push down below fixed header */
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 20px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  animation: aboutFadeIn 1.2s ease-in-out;
+}
+
+/* Profile Image */
+.about-image {
+  width: 260px;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #e6007e;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* Text Section */
+.about-text {
+  max-width: 600px;
+  text-align: left;
+}
+
+.about-text h2 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 20px;
+}
+
+.about-text p {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #444;
+}
+
+/* Footer */
+footer {
+  margin-top: 40px;
+  padding: 20px;
+  background: rgba(255,255,255,0.7);
+  font-size: 14px;
+  color: #333;
+}
+
+/* Animation */
+@keyframes aboutFadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive for About Section */
+@media(max-width:768px){
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+  .about-image {
+    margin-bottom: 20px;
+  }
+  .about-text {
+    text-align: center;
+  }
+}
+
+/* ----------------------------- */
+/* CONTACT SECTION (separate!)   */
+/* ----------------------------- */
+.contact-section {
+  margin: 140px auto 60px auto;
+  padding: 40px;
+  max-width: 1000px;
+  background: rgba(255,255,255,0.9);
+  border-radius: 20px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  animation: aboutFadeIn 1.2s ease-in-out;
+}
+
+.contact-container h2 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.contact-intro {
+  font-size: 18px;
+  color: #444;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* Contact Info Cards */
+.contact-info {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.info-card {
+  flex: 1 1 280px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-5px);
+}
+
+.info-card h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #e6007e;
+  margin-bottom: 10px;
+}
+
+.info-card p, .info-card a {
+  font-size: 16px;
+  color: #333;
+  text-decoration: none;
+}
+
+.info-card a:hover {
+  text-decoration: underline;
+  color: #e6007e;
+}
+
+/* Contact Form */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  font-size: 16px;
+  font-family: 'Cybros', sans-serif;
+}
+
+.contact-form button {
+  padding: 14px;
+  background: #e6007e;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+  background: #bf0067;
+}
+
+/* Responsive for Contact Section */
+@media(max-width:768px){
+  .contact-info {
+    flex-direction: column;
+    align-items: center;
+  }
+  .info-card {
+    width: 100%;
+    max-width: 400px;
+  }
+}

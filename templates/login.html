@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login - Star's Bakery</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f9f9f9; }
+    .login-container {
+      width: 350px; margin: 80px auto; padding: 25px;
+      background: #fff; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    h2 { margin-bottom: 20px; color: #333; }
+    input { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 4px; }
+    button {
+      width: 100%; padding: 12px; margin: 10px 0;
+      background: #ff4081; color: #fff; border: none; cursor: pointer;
+      font-size: 16px; border-radius: 4px;
+    }
+    button:hover { background: #e73370; }
+    .social-btn { margin: 10px 0; }
+    .create-btn { background: #4CAF50; }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h2>Sign In to Star's Bakery</h2>
+
+    <!-- Email login -->
+    <form id="loginForm">
+      <input type="email" id="email" placeholder="Enter your email" required>
+      <input type="password" id="password" placeholder="Enter your password" required>
+      <button type="submit">Login</button>
+    </form>
+
+    <hr>
+
+    <!-- Google Login Placeholder -->
+    <button class="social-btn" onclick="googleLogin()">Sign in with Google</button>
+
+    <hr>
+
+    <!-- Apple Login Placeholder -->
+    <button class="social-btn" onclick="appleLogin()">Sign in with Apple</button>
+
+    <hr>
+
+    <!-- Create account -->
+    <button class="create-btn" onclick="window.location.href='register.html'">Create Account</button>
+  </div>
+
+  <script>
+    // Email login simulation
+    document.getElementById("loginForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+      if(email && password) {
+        localStorage.setItem("signedIn", "true");   // ✅ consistent flag
+        localStorage.setItem("userEmail", email);
+
+        // Redirect back to checkout if needed
+        const redirectPage = localStorage.getItem("redirectAfterLogin");
+        if (redirectPage) {
+          localStorage.removeItem("redirectAfterLogin");
+          window.location.href = redirectPage;
+        } else {
+          window.location.href = "starsbakery.html";
+        }
+      } else {
+        alert("Please enter valid credentials.");
+      }
+    });
+
+    // Google login simulation
+    function googleLogin() {
+      localStorage.setItem("signedIn", "true");
+      localStorage.setItem("userEmail", "googleuser@example.com");
+      const redirectPage = localStorage.getItem("redirectAfterLogin");
+      if (redirectPage) {
+        localStorage.removeItem("redirectAfterLogin");
+        window.location.href = redirectPage;
+      } else {
+        window.location.href = "starsbakery.html";
+      }
+    }
+
+    // Apple login simulation
+    function appleLogin() {
+      localStorage.setItem("signedIn", "true");
+      localStorage.setItem("userEmail", "appleuser@example.com");
+      const redirectPage = localStorage.getItem("redirectAfterLogin");
+      if (redirectPage) {
+        localStorage.removeItem("redirectAfterLogin");
+        window.location.href = redirectPage;
+      } else {
+        window.location.href = "starsbakery.html";
+      }
+    }
+  </script>
+</body>
+</html>

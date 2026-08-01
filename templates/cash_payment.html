@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cash Payment - Star's Bakery</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f9f9f9; }
+    .payment-container {
+      width: 400px; margin: 80px auto; padding: 25px;
+      background: #fff; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    h2 { margin-bottom: 20px; color: #333; }
+    p { font-size: 16px; margin: 12px 0; }
+    button {
+      width: 100%; padding: 12px; margin: 10px 0;
+      background: #4CAF50; color: #fff; border: none; cursor: pointer;
+      font-size: 16px; border-radius: 4px; font-weight: bold;
+    }
+    button:hover { background: #3e8e41; }
+    .back-btn { background: #ccc; color: #333; }
+    .back-btn:hover { background: #aaa; }
+  </style>
+</head>
+<body>
+  <div class="payment-container">
+    <h2>Cash on Delivery</h2>
+    <p>Your total amount is: <strong>GHS <span id="amount">0.00</span></strong></p>
+    <p>Please have the cash ready when your order is delivered.</p>
+
+    <button id="confirmCash">Confirm Order</button>
+    <button class="back-btn" onclick="window.location.href='checkout.html'">Back to Checkout</button>
+  </div>
+
+  <script>
+    const total = localStorage.getItem("checkoutTotal") || "0.00";
+    document.getElementById("amount").textContent = total;
+
+    document.getElementById("confirmCash").addEventListener("click", async function() {
+      const order = JSON.parse(localStorage.getItem("currentOrder"));
+      if(order) {
+        order.phone = "Cash on Delivery";
+
+        await fetch("https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(order)
+        });
+
+        alert("Your cash-on-delivery order has been placed for GHS " + total + ".");
+        localStorage.removeItem("checkoutTotal");
+        localStorage.removeItem("currentOrder");
+        window.location.href = "success.html";
+      }
+    });
+  </script>
+</body>
+</html>

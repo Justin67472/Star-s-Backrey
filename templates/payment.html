@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Payment - Star's Bakery</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f9f9f9; }
+    .payment-container {
+      width: 400px; margin: 80px auto; padding: 20px;
+      background: #fff; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2 { text-align: center; color: #333; }
+    select, input {
+      width: 100%; padding: 10px; margin: 10px 0;
+      border: 1px solid #ccc; border-radius: 4px;
+    }
+    button {
+      width: 100%; padding: 12px; background: #ff4081;
+      color: #fff; border: none; cursor: pointer; font-size: 16px;
+    }
+    button:hover { background: #e73370; }
+  </style>
+</head>
+<body>
+  <div class="payment-container">
+    <h2>Complete Your Payment</h2>
+    <form id="paymentForm">
+      <label for="method">Select Payment Method:</label>
+      <select id="method" required>
+        <option value="">-- Choose Method --</option>
+        <option value="card">Credit/Debit Card</option>
+        <option value="mobile">Mobile Money</option>
+        <option value="paypal">PayPal</option>
+      </select>
+
+      <label for="amount">Amount (GHS):</label>
+      <input type="number" id="amount" placeholder="Enter amount" required>
+
+      <button type="submit">Pay Now</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById("paymentForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const method = document.getElementById("method").value;
+      const amount = document.getElementById("amount").value;
+
+      if(method && amount > 0) {
+        alert("Payment of GHS " + amount + " via " + method + " successful!");
+        // Here you would integrate with a real payment gateway API
+        window.location.href = "confirmation.html"; // redirect to confirmation page
+      } else {
+        alert("Please select a payment method and enter a valid amount.");
+      }
+    });
+  </script>
+</body>
+</html>

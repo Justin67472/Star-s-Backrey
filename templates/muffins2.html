@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Muffins - Star's Bakery</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="logo">
+    <a href="starsbakery.html"><img src="images/logo.jpg" alt="Logo" /></a>
+  </div>
+
+  <nav class="main-nav">
+    <ul>
+      <li><a href="muffins.html" class="active">Muffins</a></li>
+      <li><a href="doughnuts.html">Doughnuts</a></li>
+      <li><a href="pancakes.html">Pancakes</a></li>
+      <li><a href="cinnamonroll.html">Cinnamon Rolls</a></li>
+      <li><a href="cookies.html">Cookies</a></li>
+      <li><a href="tincakes.html">Tin Cakes</a></li>
+      <li><a href="fruitjuices.html">Fruit Juices</a></li>
+      <li><a href="packages.html">Packages</a></li>
+      <li><a href="aboutme.html">About Me</a></li>
+    </ul>
+  </nav>
+
+  <div class="header-icons">
+     <a href="cart.html" class="cart-icon">🛒</a>
+     <span id="profileIcon">👤</span>
+  </div>
+
+</header>
+
+<!-- TITLE -->
+<section class="page-title">
+  <h1 id="categoryTitle">Muffins</h1>
+  <p id="categorySubtitle">From My Oven to Your Table.</p>
+</section>
+
+<!-- PRODUCT GRID -->
+<section class="product-grid">
+
+  <div class="product-card">
+    <img src="images/cottoncandy.png" alt="Cotton Candy">
+    <h3>Cotton Candy</h3>
+    <p class="price">GHS 15</p>
+    <button class="add-cart-btn"
+      onclick="addToCart('Cotton Candy', 15, 'images/cottoncandy.png')">
+      Add to Cart
+    </button>
+  </div>
+
+  <div class="product-card">
+    <img src="images/raspberryvelvet.png" alt="Raspberry Velvet">
+    <h3>Raspberry Velvet (With White Chocolate Drizzle)</h3>
+    <p class="price">GHS 25</p>
+    <button class="add-cart-btn"
+      onclick="addToCart('Raspberry Velvet (With White Chocolate Drizzle)', 25, 'images/raspberryvelvet.png')">
+      Add to Cart
+    </button>
+  </div>
+
+  <div class="product-card">
+    <img src="images/cherrycheesecake.png" alt="Cherry Cheesecake">
+    <h3>Cherry Cheesecake (With Cream Cheese and Cherry Compote Frosting)</h3>
+    <p class="price">GHS 25</p>
+    <button class="add-cart-btn"
+      onclick="addToCart('Cherry Cheesecake (With Cream Cheese and Cherry Compote Frosting)', 25, 'images/cherrycheesecake.png')">
+      Add to Cart
+    </button>
+  </div>
+
+  <div class="product-card">
+    <img src="images/hazelnutheaven.png" alt="Hazel Nut Heaven">
+    <h3>Hazel Nut Heaven (With Nutella Frosting and Roasted Hazelnuts)</h3>
+    <p class="price">GHS 15</p>
+    <button class="add-cart-btn"
+      onclick="addToCart('Hazelnut Heaven (With Nutella Frosting and Roasted Hazelnuts)', 15, 'images/hazelnutheaven.png')">
+      Add to Cart
+    </button>
+  </div>
+
+  <div class="product-card">
+    <img src="images/blueberrydream.png" alt="Blueberry Dream">
+    <h3>Blueberry Dream (With Blueberry Chunks)</h3>
+    <p class="price">GHS 15</p>
+    <button class="add-cart-btn"
+      onclick="addToCart('Blueberrydream (With Blueberry Chunks)', 15, 'images/blueberrydream.png')">
+      Add to Cart
+    </button>
+  </div>
+
+  <div class="product-card">
+    <img src="images/mintchoco.png" alt="Mint ChocoChip">
+    <h3>Mint ChocoChip (With Mint Frosting and Chocolate Chips)</h3>
+    <p class="price">GHS 15</p>
+    <button class="add-cart-btn"
+      onclick="addToCart('Mint ChocoChip (With Mint Frosting and Chocolate Chips)', 15, 'images/mintchocochip.png')">
+      Add to Cart
+    </button>
+  </div>
+
+  <div class="product-card">
+    <img src="images/tiramisutemptation.png" alt="Tiramisu Temptation">
+    <h3>Tiramisu Temptation (With Coffee Frosting)</h3>
+    <p class="price">GHS 15</p>
+    <button class="add-cart-btn"
+      onclick="addToCart('Tiramisu Temptation (With Coffee Frosting )', 15, 'images/tiramisutemptation.png')">
+      Add to Cart
+    </button>
+  </div>
+
+<div class="product-card">
+    <img src="images/coconutcloud.png" alt="Coconut Cloud">
+    <h3>Coconut Cloud (With Coconut Frosting and Coconut Shavings )</h3>
+    <p class="price">GHS 15</p>
+    <button class="add-cart-btn"
+      onclick="addToCart('Coconut Cloud (With Coconut Frosting and Coconut Shavings )', 15, 'images/coconutcloud.png')">
+      Add to Cart
+    </button>
+  </div>
+
+ <div class="product-card">
+    <img src="images/chocolava.png" alt="Choco Lava">
+    <h3>Choco Lava</h3>
+    <p class="price">GHS 15</p>
+    <button class="add-cart-btn"
+      onclick="addToCart('Choco Lava', 15, 'images/chocolava.png')">
+      Add to Cart
+    </button>
+  </div>
+
+<div class="product-card">
+    <img src="images/bananabread.png" alt="Banana">
+    <h3>Banana Bread</h3>
+    <p class="price">GHS 15</p>
+    <button class="add-cart-btn"
+      onclick="addToCart('Banana Bread', 15, 'images/bananabread.png')">
+      Add to Cart
+    </button>
+  </div>
+</section>
+
+<!-- PAGINATION -->
+<section class="pagination">
+  <div class="pagination-buttons">
+    <button class="pagination-btn back-btn" onclick="goBackPage()">
+      <img src="images/cutemuffin.png" alt="Back Muffin Icon" class="muffin-icon">
+      ← Back
+    </button>
+
+    <span class="page-number">Page 2 of 3</span>
+
+    <button class="pagination-btn next-btn" onclick="goNextPage()">
+      Next →
+      <img src="images/muffincutey.png" alt="Next Muffin Icon" class="muffin-icon">
+    </button>
+  </div>
+</section>
+
+
+<footer>
+  <p>© 2026 Star's Bakery. All Rights Reserved.</p>
+</footer>
+
+<!-- TITLE ANIMATION SCRIPT -->
+<script>
+  const title = document.getElementById("categoryTitle");
+  const subtitle = document.getElementById("categorySubtitle");
+
+  const titleWords = [
+    "Muffin Mastery",
+    "Baked Perfection",
+    "Artisan Muffins",
+    "Elevated Indulgence",
+    "Daily Muffin Ritual"
+  ];
+
+  const subtitleWords = [
+    "Fresh Ingredients, Wholesome Bakes.",
+    "Cure Your Muffin Cravings.",
+    "Perfect for Mornings & Breaks.",
+    "Fresh • Moist • Irresistible.",
+    "For Every Muffin Lover."
+  ];
+
+  let index = 0;
+
+  function changeTitle() {
+    index = (index + 1) % titleWords.length;
+    title.textContent = titleWords[index];
+    subtitle.textContent = subtitleWords[index];
+  }
+
+  setInterval(changeTitle, 2500);
+</script>
+
+<script src="script.js"></script>
+<script>
+  function goNextPage() {
+    window.location.href = "muffins3.html"; // link to your next muffin page
+  }
+
+  function goBackPage() {
+    window.location.href = "muffins.html"; // link back to your first muffin page
+  }
+</script>
+
+</body>
+</html>

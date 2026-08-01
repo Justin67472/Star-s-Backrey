@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cinnamon Rolls- Star's Bakery</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="logo">
+            <a href="Starsbakery.html"><img src="images/logo.jpg" alt="Logo" /></a>
+        </div>
+
+        <nav class="main-nav">
+            <ul>
+               <li><a href="muffins.html">Muffins</a></li>
+                <li><a href="doughnuts.html">Doughnuts</a></li>
+                <li><a href="pancakes.html">Pancakes</a></li>
+                <li><a href="cinnamonroll.html">Cinammon Rolls</a></li>
+                <li><a href="cookies.html">Cookies</a></li>
+                <li><a href="tincakes.html">Tin Cakes</a></li>
+                <li><a href="fruitjuices.html">Fruit Juices</a></li>
+                <li><a href="packages.html">Packages</a></li>
+                <li><a href="aboutme.html">About Me</a></li>
+            </ul>
+        </nav>
+
+        <div class="header-icons">
+            <a href="cart.html" class="cart-icon">🛒</a>
+            <span id="profileIcon">👤</span>
+        </div>
+
+    </header>
+
+    <!-- TITLE -->
+    <section class="page-title">
+        <h1 id="categoryTitle">Cinnamon Rolls</h1>
+        <p id="categorySubtitle">Roll Into Sweetness.</p>
+    </section>
+
+    <!-- PRODUCT GRID -->
+    <section class="product-grid">
+
+        <div class="product-card">
+            <img src="images/redvelvetswirl.png" alt="">
+            <h3>Red Velvet Swirl</h3>
+            <p class="price">GHS 15</p>
+            <button class="add-cart-btn"
+                onclick="addToCart('Red Velvet Swirl', 15, 'images/redvelvetswirl.png')">
+                Add to Cart
+            </button>
+        </div>
+
+        <div class="product-card">
+            <img src="images/chocolateswirl.png" alt="">
+            <h3>Chocolate Swirl</h3>
+            <p class="price">GHS 15</p>
+            <button class="add-cart-btn"
+                onclick="addToCart('Chocolate Swirl', 15, 'images/chocolateswirl.png')">
+                Add to Cart
+            </button>
+        </div>
+
+        <div class="product-card">
+            <img src="images/saltedcaramel.png" alt="">
+            <h3>Salted Caramel</h3>
+            <p class="price">GHS 15</p>
+            <button class="add-cart-btn"
+                onclick="addToCart('Salted Caramel', 15, 'images/saltedcaramel.png')">
+                Add to Cart
+            </button>
+        </div>
+
+        <div class="product-card">
+            <img src="images/lemonroll.png" alt="">
+            <h3>Lemon Roll</h3>
+            <p class="price">GHS 15</p>
+            <button class="add-cart-btn"
+                onclick="addToCart('Lemon Roll', 45, 'images/lemonroll.png')">
+                Add to Cart
+            </button>
+        </div>
+
+        <div class="product-card">
+            <img src="images/classic.png" alt="">
+            <h3>Classic </h3>
+            <p class="price">GHS 15</p>
+            <button class="add-cart-btn"
+                onclick="addToCart('Classic (With Cream Cheese)', 15, 'images/classic.png')">
+                Add to Cart
+            </button>
+        </div>
+
+        <div class="product-card">
+            <img src="images/appleroll.png" alt="">
+            <h3>Apple Roll</h3>
+            <p class="price">GHS 15</p>
+            <button class="add-cart-btn"
+                onclick="addToCart('Apple Roll', 15, 'images/appleroll.png')">
+                Add to Cart
+            </button>
+        </div>
+
+        <div class="product-card">
+            <img src="images/cookiesandcream.png" alt="">
+            <h3>Cookies and Cream (With Oreo Chunks)</h3>
+            <p class="price">GHS 15</p>
+            <button class="add-cart-btn"
+                onclick="addToCart('Cookies and Cream (With Oreo Chunks)', 45, 'images/cookiesandcream.png')">
+                Add to Cart
+            </button>
+        </div>
+
+	 <div class="product-card">
+            <img src="images/strawberrycream.png" alt="">
+            <h3>Strawberry Cream (With Strawberry Jam Filling and Vanilla Cream Cheese Frosting)</h3>
+            <p class="price">GHS 15</p>
+            <button class="add-cart-btn"
+                onclick="addToCart('Strawberry Cream (With Strawberry Jam Filling and Vanilla Cream Cheese Frosting )', 45, 'images/strawberrycream.png')">
+                Add to Cart
+            </button>
+        </div>
+
+	 <div class="product-card">
+            <img src="images/matchawhitechocolate.png" alt="">
+            <h3>Matcha White Chocolate (With White Chocolate Drizzle)</h3>
+            <p class="price">GHS 15</p>
+            <button class="add-cart-btn"
+                onclick="addToCart('Matcha White Chocolate (With White Chocolate Drizzle)', 45, 'images/matchawhitechocolate.png')">
+                Add to Cart
+            </button>
+        </div>
+
+	 <div class="product-card">
+            <img src="images/mangotango.png" alt="">
+            <h3>Mango Tango (With Coconut Glaze)</h3>
+            <p class="price">GHS 15</p>
+            <button class="add-cart-btn"
+                onclick="addToCart('Mango Tango (With Coconut Glaze)', 45, 'images/mangotango.png')">
+                Add to Cart
+            </button>
+        </div>
+    </section>
+<!-- PAGINATION -->
+<section class="pagination">
+  <div class="pagination-buttons">
+    <button class="pagination-btn back-btn"  onclick="goBackPage()">
+      <img src="images/cinnamonrolll.jpg" alt="Back Cinnamon Roll Icon" class="cinnamonroll-icon">
+      ← Back
+    </button>
+
+    <span class="page-number">Page 3 of 3</span>
+
+   </div>
+</section>
+
+
+    <footer>
+        <p>© 2026 Star's Bakery. All Rights Reserved.</p>
+    </footer>
+
+
+
+    <!-- ADD TO CART SCRIPT -->
+    <script>
+        function addToCart(name, price, image) {
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+            let existing = cart.find(item => item.name === name);
+
+            if (existing) {
+                existing.quantity += 1;
+            } else {
+                cart.push({
+                    name: name,
+                    price: price,
+                    image: image,
+                    quantity: 1
+                });
+            }
+
+            localStorage.setItem("cart", JSON.stringify(cart));
+
+            // Redirect to cart page
+            window.location.href = "cart.html";
+        }
+    </script>
+ <!-- TITLE ANIMATION SCRIPT -->
+    <script>
+        const title = document.getElementById("categoryTitle");
+        const subtitle = document.getElementById("categorySubtitle");
+
+        const titleWords = [
+            "Velvet Swirls",
+            "Cinnamon Bliss",
+            "Sweet Spirals",
+            "Freshly Baked Rolls",
+            "Indulgent Treats"
+        ];
+
+        const subtitleWords = [
+            "Warm, Sweet, and Irresistible.",
+            "Swirls of Joy in Every Bite.",
+            "Perfect for Breakfast & Dessert.",
+            "Soft • Fuffy • Flavorful.",
+            "Your Cinnamon Roll Companion."
+        ];
+
+        let index = 0;
+
+        function changeTitle() {
+            index = (index + 1) % titleWords.length;
+            title.textContent = titleWords[index];
+            subtitle.textContent = subtitleWords[index];
+        }
+
+        setInterval(changeTitle, 2500);
+    </script>
+<script>
+ 
+  function goBackPage() {
+    window.location.href = "cinnamonroll2.html"; // link to your previous cinnamon roll page
+  }
+</script>
+
+</body>
+</html>
+

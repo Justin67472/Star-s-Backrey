@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Doughnuts - Star's Bakery</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="logo">
+            <a href="Starsbakery.html"><img src="images/logo.jpg" alt="Logo" /></a>
+        </div>
+
+        <nav class="main-nav">
+    <ul>
+      <li><a href="muffins.html">Muffins</a></li>
+      <li><a href="doughnuts.html" class="active">Doughnuts</a></li>
+      <li><a href="pancakes.html">Pancakes</a></li>
+      <li><a href="cinnamonroll.html">Cinnamon Rolls</a></li>
+      <li><a href="cookies.html">Cookies</a></li>
+      <li><a href="tincakes.html">Tin Cakes</a></li>
+      <li><a href="fruitjuices.html">Fruit Juices</a></li>
+      <li><a href="packages.html">Packages</a></li>
+      <li><a href="aboutme.html">About Me</a></li>
+    </ul>
+  </nav>
+        <div class="header-icons">
+            <a href="cart.html" class="cart-icon">🛒</a>
+            <span id="profileIcon">👤</span>
+        </div>
+
+    </header>
+
+    <!-- TITLE -->
+    <section class="page-title">
+        <h1 id="categoryTitle">Doughnuts</h1>
+        <p id="categorySubtitle">Glazed, Filled, and Always Fresh.</p>
+    </section>
+
+    <!-- PRODUCT GRID -->
+    <section class="product-grid">
+
+        <div class="product-card">
+            <img src="images/dubaichoco.png" alt="">
+            <h3>Dubai Chocolate (Large, With Chocolate Glaze, Chocolate Sauce, and Pistachio Bits)</h3>
+            <p class="price">GHS 20</p>
+            <button class="add-cart-btn"
+                onclick="addToCart('Dubai Chocolate (Large, With Chocolate Glaze, Chocolate Sauce, and Pistachio Bits)', 20, 'images/dubai
+choco.png')">
+                Add to Cart
+            </button>
+        </div>
+
+        <div class="product-card">
+            <img src="images/strawberrysunset.png" alt="">
+            <h3>Strawberry Sunset (Large, With Strawberry Glaze, Vanilla Drizzle and Pink Suagr Dust)</h3>
+            <p class="price">GHS 20</p>
+            <button class="add-cart-btn"
+                onclick="addToCart('Strawberry Sunset (Large, With Strawberry Glaze, Vanilla Drizzle and Pink Sugar Dust)', 20, 'images/strawwberrysunset.png')">
+                Add to Cart
+            </button>
+        </div>
+
+        <div class="product-card">
+            <img src="images/mochamelt.png" alt="">
+            <h3>Mocha Melt (Large, With Espresso Filling, Chocolate Sauce, and Chocolate Bits)</h3>
+            <p class="price">GHS 5</p>
+            <button class="add-cart-btn"
+                onclick="addToCart('Mocha Melt (Small, With Espresso Filling, Chocolate Sauce, and Chocolate Bits)', 5, 'images/mochamelt.png')">
+                Add to Cart
+            </button>
+        </div>
+
+        <div class="product-card">
+            <img src="images/justjams.png" alt="">
+            <h3>Just Jams (Small, With Strawberry Jam, Mango Jam, and orange Jam Fillings)</h3>
+            <p class="price">GHS 20</p>
+            <button class="add-cart-btn"
+                onclick="addToCart('Just Jams (Small, With Strawberry Jam, Mango Jam, and Orange Jam Fillings )', 20, 'images/justjams.png')">
+                Add to Cart
+            </button>
+        </div>
+
+        <div class="product-card">
+            <img src="images/sugarrush2.png" alt="">
+            <h3>Sugar Rush 2  (Large, With Nutella Frosting, Kinder Frosting, And Biscoff Frosting )</h3>
+            <p class="price">GHS 20</p>
+            <button class="add-cart-btn"
+                onclick="addToCart('Sugar Rush 2 ( 3 Large, With Nutella Frosting, Kinder Frosting, and Biscoff Frosting)', 20, 'images/sugarrush2.png')">
+                Add to Cart
+            </button>
+        </div>
+
+        <div class="product-card">
+            <img src="images/chocoroyale.png" alt="">
+            <h3>Choco Royale (Small, With Dark Chocolate Filling and Oreo Bits)</h3>
+            <p class="price">GHS 25</p>
+            <button class="add-cart-btn"
+                onclick="addToCart('Choco Royale (Small, With Dark Chocolate Filling and Oreo Bits)', 25, 'images/chocoroyale.png')">
+                Add to Cart
+            </button>
+        </div>
+
+        <div class="product-card">
+            <img src="images/pizzadelux.png" alt="">
+            <h3>Pizza Delux (Large, With Chicken and Cheese)</h3>
+            <p class="price">GHS 25</p>
+            <button class="add-cart-btn"
+                onclick="addToCart('Pizza Delux (Large, With Chicken and Cheese)', 25, 'images/pizzadelux.png')">
+                Add to Cart
+            </button>
+        </div>
+
+ <div class="product-card">
+            <img src="images/matchachoco.png" alt="">
+            <h3>Matcha Choco (Large, With Chocolate Glaze and Matcha Powder)</h3>
+            <p class="price">GHS 25</p>
+            <button class="add-cart-btn"
+                onclick="addToCart('Matcha Choco (Large, With Chocolate Glaze and Matcha Powder)', 25, 'images/matchachoco.png')">
+                Add to Cart
+            </button>
+        </div>
+
+ <div class="product-card">
+            <img src="images/cinnamontwists.png" alt="">
+            <h3>Cinnamon Twisters (Large, With Chocolate Sauce)</h3>
+            <p class="price">GHS 25</p>
+            <button class="add-cart-btn"
+                onclick="addToCart('Nutty Glaze (With Caramel Sauce And Nuts)', 25, 'images/cinnamontwists.png')">
+                Add to Cart
+            </button>
+        </div>
+
+ <div class="product-card">
+            <img src="images/chocolateeclair.png" alt="">
+            <h3>Chocolate Eclair (Large, With Chocolate Glaze and Chocolate Sauce)</h3>
+            <p class="price">GHS 25</p>
+            <button class="add-cart-btn"
+                onclick="addToCart('Chocolate Eclair, (Large, With Chocolate Glaze and Chocolate Sauce)', 25, 'images/chocolateeclair.png')">
+                Add to Cart
+            </button>
+        </div>
+
+
+
+    </section>
+<!-- PAGINATION -->
+<section class="pagination">
+  <div class="pagination-buttons">
+    <button class="pagination-btn back-btn" onclick="goBackPage()">
+      <img src="images/doughnut.jpg" alt="Back Doughnut Icon" class="doughnut-icon">
+      ← Back
+    </button>
+
+    <span class="page-number">Page 3 of 3</span>
+
+    </div>
+</section>
+
+    <footer>
+        <p>© 2026 Star's Bakery. All Rights Reserved.</p>
+    </footer>
+
+
+
+    <!-- ADD TO CART SCRIPT -->
+    <script>
+        function addToCart(name, price, image) {
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+            let existing = cart.find(item => item.name === name);
+
+            if (existing) {
+                existing.quantity += 1;
+            } else {
+                cart.push({
+                    name: name,
+                    price: price,
+                    image: image,
+                    quantity: 1
+                });
+            }
+
+            localStorage.setItem("cart", JSON.stringify(cart));
+
+            // Redirect to cart page
+            window.location.href = "cart.html";
+        }
+    </script>
+ <!-- TITLE ANIMATION SCRIPT -->
+    <script>
+        const title = document.getElementById("categoryTitle");
+        const subtitle = document.getElementById("categorySubtitle");
+
+        const titleWords = [
+            "Glazed & Sweet",
+            "Doughnut Delights",
+            "Handcrafted Rings",
+            "Satisfy Your Cravings",
+            "The Ultimate Treat"
+        ];
+
+        const subtitleWords = [
+            "Freshly Glazed, Perfectly Baked.",
+            "Bite Into Sweet Happiness.",
+            "Perfect for Every Occasion.",
+            "Made With Love • Fresh • Delicious.",
+            "Your Daily Doughnut Partner."
+        ];
+
+        let index = 0;
+
+        function changeTitle() {
+            index = (index + 1) % titleWords.length;
+            title.textContent = titleWords[index];
+            subtitle.textContent = subtitleWords[index];
+        }
+
+        setInterval(changeTitle, 2500);
+    </script>
+<script>
+    function goBackPage() {
+    window.location.href = "doughnuts2.html"; // link to your previous doughnut page
+  }
+</script
+</body>
+</html>

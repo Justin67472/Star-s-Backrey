@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>TigoCash Payment - Star's Bakery</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f9f9f9; }
+    .payment-container {
+      width: 400px; margin: 80px auto; padding: 25px;
+      background: #fff; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    h2 { margin-bottom: 20px; color: #333; }
+    input { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 4px; }
+    button {
+      width: 100%; padding: 12px; margin: 10px 0;
+      background: #1976d2; color: #fff; border: none; cursor: pointer;
+      font-size: 16px; border-radius: 4px; font-weight: bold;
+    }
+    button:hover { background: #0d47a1; }
+    .back-btn {
+      background: #ccc; color: #333;
+    }
+    .back-btn:hover { background: #aaa; }
+  </style>
+</head>
+<body>
+  <div class="payment-container">
+    <h2>TigoCash Payment</h2>
+
+    <form id="tigoForm">
+      <input type="text" id="phone" placeholder="Enter your Tigo number" required>
+      <input type="text" id="amount" placeholder="Amount (GHS)" readonly>
+      <button type="submit">Confirm Payment</button>
+    </form>
+
+    <button class="back-btn" onclick="window.location.href='checkout.html'">Back to Checkout</button>
+  </div>
+
+  <script>
+    const total = localStorage.getItem("checkoutTotal") || "0.00";
+    document.getElementById("amount").value = total;
+
+    document.getElementById("tigoForm").addEventListener("submit", async function(e) {
+      e.preventDefault();
+      const phone = document.getElementById("phone").value;
+      const order = JSON.parse(localStorage.getItem("currentOrder"));
+
+      if(phone && order) {
+        order.phone = phone;
+
+        // Send order to Google Sheets via Apps Script
+        await fetch("https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(order)
+        });
+
+        alert("Payment request sent to " + phone + " for GHS " + total + ". Please approve on your TigoCash app.");
+        localStorage.removeItem("checkoutTotal");
+        localStorage.removeItem("currentOrder");
+        window.location.href = "success.html";
+      } else {
+        alert("Please enter a valid Tigo number.");
+      }
+    });
+  </script>
+</body>
+</html>

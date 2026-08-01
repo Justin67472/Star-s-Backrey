@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fruit Juices - Star's Bakery</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="logo">
+            <a href="Starsbakery.html"><img src="images/logo.jpg" alt="Logo" /></a>
+        </div>
+
+        <nav class="main-nav">
+            <ul>
+                <li><a href="muffins.html">Muffins</a></li>
+                <li><a href="doughnuts.html">Doughnuts</a></li>
+                <li><a href="pancakes.html">Pancakes</a></li>
+                <li><a href="cinnamonroll.html">Cinnamon Rolls</a></li>
+                <li><a href="cookies.html">Cookies</a></li>
+                <li><a href="tincakes.html">Tin Cakes</a></li>
+                <li><a href="fruitjuices.html" class="active">Fruit Juices</a></li>
+                <li><a href="packages.html">Packages</a></li>
+                <li><a href="aboutme.html">About Me</a></li>
+            </ul>
+        </nav>
+
+        <div class="header-icons">
+            <a href="cart.html" class="cart-icon">🛒</a>
+            <span id="profileIcon">👤</span>
+        </div>
+
+
+    </header>
+
+    <!-- TITLE -->
+    <section class="page-title">
+        <h1 id="categoryTitle">Fruit Juices</h1>
+        <p id="categorySubtitle">Sip the Sunshine, Taste the Freshness.</p>
+    </section>
+
+    <!-- PRODUCT GRID -->
+    <section class="product-grid">
+
+        <div class="product-card">
+            <img src="images/mangopineappleglow.png" alt="">
+            <h3>Mango Pineapple Glow (700 ml)</h3>
+            <p class="price">GHS 25</p>
+            <button class="add-cart-btn"
+                onclick="addToCart('Mango Pineapple Glow (700 ml)', 25, 'images/mangopineappleglow.png')">
+                Add to Cart
+            </button>
+        </div>
+
+        <div class="product-card">
+            <img src="images/strawberrymangosplash.png" alt="">
+            <h3>Strawberry Mango Splash (700 ml)</h3>
+            <p class="price">GHS 25</p>
+            <button class="add-cart-btn"
+                onclick="addToCart('Strawberry Mango Splash (700 ml)', 25, 'images/strawberrymangosplash.png')">
+                Add to Cart
+            </button>
+        </div>
+
+        <div class="product-card">
+            <img src="images/pineapplepassionfruit.png" alt="">
+            <h3>Pineapple Passionfruit (700 ml)</h3>
+            <p class="price">GHS 25</p>
+            <button class="add-cart-btn"
+                onclick="addToCart('Pineapple Passionfruit (700 ml)', 25, 'images/pineapplepassionfruit.png')">
+                Add to Cart
+            </button>
+        </div>
+
+        <div class="product-card">
+            <img src="images/peachorangerefresher.png" alt="">
+            <h3>Peach Orange Refresher (700 ml)</h3>
+            <p class="price">GHS 25</p>
+            <button class="add-cart-btn"
+                onclick="addToCart('Peach Orange Fresher (700 ml)', 25, 'images/peachorangerefresher.png')">
+                Add to Cart
+            </button>
+        </div>
+
+        <div class="product-card">
+            <img src="images/watermelonlime.png" alt="">
+            <h3>Watermelon Lime (700 ml)</h3>
+            <p class="price">GHS 25</p>
+            <button class="add-cart-btn"
+                onclick="addToCart('Watermelon Lime (700 ml)', 25, 'images/watermelonlime.png')">
+                Add to Cart
+            </button>
+        </div>
+
+        <div class="product-card">
+            <img src="images/mangococonutcream.png" alt="">
+            <h3>Mango Coconut Cream (700 ml)</h3>
+            <p class="price">GHS 25</p>
+            <button class="add-cart-btn"
+                onclick="addToCart('Mango Coconut Cream (700 ml)', 25, 'images/mangococonutcream.png')">
+                Add to Cart
+            </button>
+        </div>
+
+        <div class="product-card">
+            <img src="images/kiwilime.png" alt="">
+            <h3>Kiwi Lime (700 ml)</h3>
+            <p class="price">GHS 25</p>
+            <button class="add-cart-btn"
+                onclick="addToCart('Kiwi Lime (700 ml)', 25, 'images/kiwilime.png')">
+                Add to Cart
+            </button>
+        </div>
+
+ <div class="product-card">
+            <img src="images/peachraspberrylemonade.png" alt="">
+            <h3>Peach Raspberry Lemonade (700 ml)</h3>
+            <p class="price">GHS 25</p>
+            <button class="add-cart-btn"
+                onclick="addToCart('Peach Raspberry Lemonade (700 ml)', 25, 'images/peachraspberrylemonade.png')">
+                Add to Cart
+            </button>
+        </div>
+
+ <div class="product-card">
+            <img src="images/tropicalpunchlemonade.png" alt="">
+            <h3>Tropical Punch Lemonade (700 ml)</h3>
+            <p class="price">GHS 45</p>
+            <button class="add-cart-btn"
+                onclick="addToCart('Tropical Punch Lemonade (700 ml)', 25, 'images/tropicalpunchlemonade.png')">
+                Add to Cart
+            </button>
+        </div>
+
+ <div class="product-card">
+            <img src="images/blueraspberrycoconut.png" alt="">
+            <h3>Blue Raspberry Coconut (700 ml)</h3>
+            <p class="price">GHS 25</p>
+            <button class="add-cart-btn"
+                onclick="addToCart('Blueberry Raspberry Coconut (700 ml)', 25, 'images/blueraspberrycoconut.png')">
+                Add to Cart
+            </button>
+        </div>
+    </section>
+
+ </section>
+<!-- PAGINATION -->
+<section class="pagination">
+  <div class="pagination-buttons">
+    <button class="pagination-btn back-btn"  onclick="goBackPage()">
+      <img src="images/cutejuice.jpg" alt="Back Fruit Juice Icon" class="fruitjuice-icon">
+      ← Back
+    </button>
+
+    <span class="page-number">Page 2 of 2</span>
+
+  </div>
+</section>
+
+    <footer>
+        <p>© 2026 Star's Bakery. All Rights Reserved.</p>
+    </footer>
+
+
+
+    <!-- ADD TO CART SCRIPT -->
+    <script>
+        function addToCart(name, price, image) {
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+            let existing = cart.find(item => item.name === name);
+
+            if (existing) {
+                existing.quantity += 1;
+            } else {
+                cart.push({
+                    name: name,
+                    price: price,
+                    image: image,
+                    quantity: 1
+                });
+            }
+
+            localStorage.setItem("cart", JSON.stringify(cart));
+
+            // Redirect to cart page
+            window.location.href = "cart.html";
+        }
+    </script>
+ <!-- TITLE ANIMATION SCRIPT -->
+    <script>
+        const title = document.getElementById("categoryTitle");
+        const subtitle = document.getElementById("categorySubtitle");
+
+       const titleWords = [
+            "Tropical Bliss",
+            "Juice Paradise",
+            "Nature's Nectar",
+            "Freshly Squeezed", 
+            "Colorful Refreshment"
+        ];
+
+        const subtitleWords = [
+            "Sip the Sunshine, Taste the Freshness.",
+            "Juicy Moments, Pure Bliss.",
+            "Burst of Natural Goodness.",
+            "Freshly Squeezed Happiness.",
+            "Your Daily Splash of Vitality." 
+        ];
+
+
+
+        let index = 0;
+
+        function changeTitle() {
+            index = (index + 1) % titleWords.length;
+            title.textContent = titleWords[index];
+            subtitle.textContent = subtitleWords[index];
+        }
+
+        setInterval(changeTitle, 2500);
+    </script>
+
+<script>
+function goBackPage() {
+    window.location.href = "fruitjuices.html"; // link to your previous fruit juices page
+  }
+</script>
+
+
+</body>
+</html>
+
